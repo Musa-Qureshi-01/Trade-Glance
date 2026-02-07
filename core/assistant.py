@@ -47,7 +47,17 @@ class ChatState(TypedDict):
 # TOOLS
 # -------------------------------------------------
 
-search_tool = DuckDuckGoSearchRun()
+# Try to initialize DuckDuckGo search, but don't crash if unavailable
+try:
+    search_tool = DuckDuckGoSearchRun()
+    logger.info("DuckDuckGo search tool initialized successfully")
+except Exception as e:
+    logger.warning(f"DuckDuckGo search tool unavailable: {e}")
+    # Create a dummy tool that returns an error message
+    @tool
+    def search_tool(query: str) -> str:
+        """Search the web for information (currently unavailable)."""
+        return "Web search is temporarily unavailable. Please try asking without requiring external search."
 
 @tool
 def calculator_tool(expression: str) -> str:
