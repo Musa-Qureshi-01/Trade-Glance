@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📈 TradeGlance
+# TradeGlance
 
 ### AI-Powered Market Intelligence Platform
 
@@ -19,6 +19,8 @@
 
 </div>
 
+---
+> ## [Preview](https://trade-glance.streamlit.app/)
 ---
 
 ## ⚡ What is TradeGlance?
