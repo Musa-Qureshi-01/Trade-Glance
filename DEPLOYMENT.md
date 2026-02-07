@@ -9,9 +9,9 @@ Add the following in TOML format:
 
 ```toml
 # API Keys
-FINNHUB_API_KEY = "d63h00pr01qnpqg12o20d63h00pr01qnpqg12o2g"
-GOOGLE_API_KEY = "AIzaSyAXCUm-l7m8ESRHFN4kkMt0BdAsOfxhQ_U"
-ALPHAVANTAGE_API_KEY = "N9BN6XP65071BE5A"
+FINNHUB_API_KEY = "**********************************"
+GOOGLE_API_KEY = "*************************"
+ALPHAVANTAGE_API_KEY = "****************"
 ```
 
 ### Steps:
