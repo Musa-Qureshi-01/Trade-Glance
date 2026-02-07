@@ -5,6 +5,7 @@ import streamlit as st
 from transformers import pipeline
 from datetime import datetime, timedelta
 from core.logger import get_logger
+import config
 
 logger = get_logger(__name__)
 
@@ -16,8 +17,8 @@ def load_sentiment_pipeline():
 
 class SentimentEngine:
     def __init__(self):
-        # Initialize Finnhub Client
-        api_key = os.getenv("FINNHUB_API_KEY")
+        # Initialize Finnhub Client using config
+        api_key = config.FINNHUB_API_KEY
         if not api_key:
             logger.warning("Finnhub API Key missing")
             self.client = None

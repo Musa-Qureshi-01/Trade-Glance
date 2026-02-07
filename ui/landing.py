@@ -186,7 +186,7 @@ def render_landing_page():
                     response = requests.post(
                         "https://api.web3forms.com/submit",
                         data={
-                            "access_key": "b712a805-9a6a-40a9-b782-0c9b2c5893d5",  # User needs to replace this
+                            "access_key": "b712a805-9a6a-40a9-b782-0c9b2c5893d5",
                             "name": name,
                             "email": email,
                             "message": message,
@@ -194,12 +194,24 @@ def render_landing_page():
                         },
                         timeout=10
                     )
+                    
+                    # Check response
                     if response.status_code == 200:
-                        st.success("✅ Message sent successfully! I'll get back to you soon.")
+                        result = response.json()
+                        if result.get("success"):
+                            st.success("✅ Message sent successfully! I'll get back to you soon.")
+                        else:
+                            error_msg = result.get("message", "Unknown error")
+                            st.error(f"❌ Failed to send: {error_msg}")
                     else:
-                        st.error("❌ Failed to send message. Please try again.")
+                        st.error(f"❌ Server error ({response.status_code}). Please try again later.")
+                        
+                except requests.exceptions.Timeout:
+                    st.error("❌ Request timed out. Please check your internet connection.")
+                except requests.exceptions.RequestException as e:
+                    st.error(f"❌ Network error: {str(e)}")
                 except Exception as e:
-                    st.error(f"❌ Error: {e}")
+                    st.error(f"❌ Unexpected error: {str(e)}")
             else:
                 st.warning("⚠️ Please fill in all fields.")
     
