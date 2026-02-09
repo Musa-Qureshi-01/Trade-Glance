@@ -25,7 +25,7 @@
 
 ## ⚡ What is TradeGlance?
 
-TradeGlance is a **clean, professional FinTech dashboard** that gives traders:
+TradeGlance is a **clean, professional FinTech Platform** that gives traders:
 
 ✔️ Future price forecasts  
 ✔️ Technical signals  
