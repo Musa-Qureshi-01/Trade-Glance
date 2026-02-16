@@ -44,7 +44,7 @@ All in **one minimal interface**.
   <img src="assets/demo.gif" width="95%" alt="TradeGlance Demo">
 </p>
 
-> 💡 *Add a short screen recording (10-15s) for instant impact*
+> 
 
 ---
 
